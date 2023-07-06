@@ -47,7 +47,7 @@ export default function Navbar() {
       </nav>
 
       <main>
-        <Home />
+        {/* <Home /> */}
         <About />
         {/* <Skills />
         <Projects />
@@ -56,9 +56,9 @@ export default function Navbar() {
         <Contact /> */}
       </main>
 
-      <footer>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 }
