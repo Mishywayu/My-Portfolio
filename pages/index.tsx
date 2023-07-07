@@ -6,8 +6,25 @@ import Experience from "./experience";
 import Resume from "./resume";
 import Contact from "./contact";
 import Footer from "./footer";
+import { useState } from "react";
 
 export default function Navbar() {
+  //Page leads to it's respective section
+  const [activeSection, setActiveSection] = useState('');
+
+  const handleNavClick = (section) => {
+    setActiveSection(section);
+    scrollToSection(section);
+  };
+
+  const scrollToSection = (section) => {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth"});
+    }
+  };
+
+//responsive navbar functionality
   const myFunction = () => {
     const x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -20,10 +37,10 @@ export default function Navbar() {
   return (
     <div>
       <nav className="topnav" id="myTopnav">
-        <a href="#home" className="active">
+        <a href="#home" className={activeSection === 'home' ? 'active' : ''} onClick={() => handleNavClick('home')}>
           Home
         </a>
-        <a href="#about">About</a>
+        <a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={() => handleNavClick('about')}>About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
@@ -47,7 +64,7 @@ export default function Navbar() {
       </nav>
 
       <main>
-        {/* <Home /> */}
+        <Home />
         <About />
         {/* <Skills />
         <Projects />
