@@ -53,11 +53,11 @@ export default function Navbar() {
       <main>
         {/* <Home /> */}
         {/* <About /> */}
-        <Skills />
+        {/* <Skills /> */}
         {/* <Projects /> */}
         {/* <Experience /> */}
         {/* <Resume /> */}
-        {/* <Contact /> */}
+        <Contact />
       </main>
 
       <footer>
