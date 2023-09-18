@@ -407,6 +407,88 @@ h2 {
   background-color: black;
 }
 
+/* PROJECT PAGE */
+.project-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.project-holder {
+  display: flex;
+  width: 55%;
+  height: 80%;
+  background-color: whitesmoke;
+}
+
+.project-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  background-color: black;
+}
+
+.project-left img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.project-right {
+  width: 50%;
+  height: 100%;
+  padding: 34px;
+}
+
+.project-right h1 {
+  font-family: Montserrat;
+  font-size: bold;
+}
+
+.project-right p {
+  padding-top: 12px;
+  font-family: Montserrat;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.project-right .project-btn {
+  margin-top: 50px;
+  float: right;
+}
+
+.project-btn a {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.live-btn {
+  margin-right: 12px;
+  background-color: crimson;
+  font-family: Montserrat;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+}
+
+.code-btn {
+  font-family: Montserrat;
+  font-size: 14px;
+  text-align: center;
+  color: black;
+  background-color: pink;
+}
+
+.project-btn a:hover {
+  background-color: black;
+  color: crimson;
+}
+
 /* RESPONSIVE DESIGN */
 /* navbar */
 @media (max-width: 600px) {
@@ -548,5 +630,25 @@ h2 {
 
   .right form {
     width: 100%;
+  }
+
+  /* project */
+  .project-container {
+    height: auto;
+  }
+
+  .project-holder {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .project-left,
+  .project-right {
+    width: 100%;
+  }
+
+  .project-right {
+    padding: 20px;
   }
 }
