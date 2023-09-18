@@ -2,7 +2,7 @@ import Home from "./home";
 import About from "./about";
 import Skills from "./skills";
 import Projects from "./projects";
-import Experience from "./experience";
+// import Experience from "./experience";
 import Resume from "./resume";
 import Contact from "./contact";
 import Footer from "./footer";
@@ -30,8 +30,7 @@ export default function Navbar() {
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#resume">Resume</a>
+        <a href="https://drive.google.com/file/d/11J20QSnBhZ258Har7KahPDil08FtJZgv/view?usp=drive_link">Resume</a>
         <a href="#contact">Contact</a>
         <a href="javascript:void(0);" className="icon" onClick={myFunction}>
           <svg
@@ -54,10 +53,8 @@ export default function Navbar() {
         {/* <Home /> */}
         {/* <About /> */}
         {/* <Skills /> */}
-        {/* <Projects /> */}
-        {/* <Experience /> */}
-        {/* <Resume /> */}
-        <Contact />
+        <Projects />
+        {/* <Contact /> */}
       </main>
 
       <footer>
