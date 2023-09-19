@@ -1,12 +1,11 @@
+import React, { useState } from "react";
 import Home from "./home";
 import About from "./about";
 import Skills from "./skills";
 import Projects from "./projects";
-// import Experience from "./experience";
-import Resume from "./resume";
+// import Resume from "./resume";
 import Contact from "./contact";
 import Footer from "./footer";
-import { useState } from "react";
 
 export default function Navbar() {
   //Page leads to it's respective section
@@ -24,6 +23,17 @@ export default function Navbar() {
   return (
     <div>
       <nav className="topnav" id="myTopnav">
+        {/* <a href="" className='dummy'></a>
+        <a href="" className='dummy'></a>
+        <a href="" className='dummy'></a>
+        <a href="" className='dummy'></a>
+        <a href="" className='dummy'></a>
+        <a href="" className='dummy'></a>
+        <a href="" className='dummy'></a>
+        <a href="" className='dummy'></a>
+        <a href="" className='dummy'></a>
+        <a href="" className='dummy'></a>
+        <a href="" className='dummy'></a> */}
         <a href="#home">
           Home
         </a>
@@ -35,8 +45,8 @@ export default function Navbar() {
         <a href="javascript:void(0);" className="icon" onClick={myFunction}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width="30"
+            height="30"
             fill="currentColor"
             className="bi bi-list"
             viewBox="0 0 16 16"
@@ -50,15 +60,15 @@ export default function Navbar() {
       </nav>
 
       <main>
-        {/* <Home /> */}
-        {/* <About /> */}
-        {/* <Skills /> */}
+        <Home />
+        <About />
+        <Skills />
         <Projects />
-        {/* <Contact /> */}
+        <Contact />
       </main>
 
       <footer>
-        {/* <Footer /> */}
+        <Footer />
       </footer>
     </div>
   );
