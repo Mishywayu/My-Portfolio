@@ -3,6 +3,7 @@ import React from "react";
 export default function Skills() {
   return (
     <section id="skills">
+      <h1 className='skills-title'>Tech <span className="special-text">Skills</span></h1>
       <div className="grid-container_skills">
         <div className="grid-item">
           <h1>Frontend</h1>

@@ -1,13 +1,42 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_sh4lb4l",
+        "template_6nbq5to",
+        form.current as unknown as HTMLFormElement,
+        "C2TnqMGvXbU-we2bW"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("message sent");
+          document.getElementById("input").value= "";
+          document.getElementById("input2").value = "";
+          document.getElementById("input3").value = "";
+          document.getElementById("input4").value = "";
+          alert("Message sent successfully!");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <section id="contact">
       <div className="contact-container">
         <div className="left">
-          <h1>Let's chat.</h1>
+          <h1>Let&apos;s chat.</h1>
           <h2>Tell me about your project.</h2>
-          <p>Let's create something together 🤟</p>
+          <p>Let&apos;s create something together 🤟</p>
           <div className="contact-email">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -28,13 +57,27 @@ export default function Contact() {
         </div>
         <div className="right">
           <h1>Send me a message 🚀</h1>
-          <form>
-            <input type="text" placeholder="Full Name" />
-            <input type="email" placeholder="Email Address" />
-            <input type="text" placeholder="Subject" />
+          <form ref={form} onSubmit={sendEmail}>
+            <input
+              type="text"
+              placeholder="Full Name"
+              name="user_name"
+              id="input"
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email Address"
+              name="user_email"
+              id="input2"
+              required
+            />
+            <input type="text" placeholder="Subject" id="input3" required />
             <h2>Tell me more about your project</h2>
-            <textarea>Type something...</textarea>
-            <button>Send message</button>
+            <textarea name="message" id="input4">Type something...</textarea>
+            <button type="submit" value="send">
+              Send message
+            </button>
           </form>
         </div>
       </div>
