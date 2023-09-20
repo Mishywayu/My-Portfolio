@@ -410,6 +410,11 @@ h2 {
   background-color: black;
 }
 
+.error-message{
+  color: red;
+  font-size: 12px;
+}
+
 /* PROJECT PAGE */
 #projects .project-title {
   text-align: center;
