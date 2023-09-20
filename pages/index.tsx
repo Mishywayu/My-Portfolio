@@ -13,9 +13,9 @@ export default function Navbar() {
 
   const myFunction = () => {
     const x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
+    if (x && x.className === "topnav") {
       x.className += " responsive";
-    } else {
+    } else if (x) {
       x.className = "topnav";
     }
   };

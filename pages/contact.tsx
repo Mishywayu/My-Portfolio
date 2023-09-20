@@ -1,33 +1,42 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 
 export default function Contact() {
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
+  const [isSending, setIsSending] = useState(false); //state for loading indicator
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const sendEmail = (e: React.FormEvent) => {
+  const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSending(true);
 
-    emailjs
-      .sendForm(
+    try {
+      const result = await emailjs.sendForm(
         "service_sh4lb4l",
         "template_6nbq5to",
         form.current as unknown as HTMLFormElement,
         "C2TnqMGvXbU-we2bW"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          console.log("message sent");
-          document.getElementById("input").value= "";
-          document.getElementById("input2").value = "";
-          document.getElementById("input3").value = "";
-          document.getElementById("input4").value = "";
-          alert("Message sent successfully!");
-        },
-        (error) => {
-          console.log(error.text);
-        }
       );
+
+      console.log(result.text);
+      console.log("message sent");
+
+      if (form.current) {
+        form.current.reset();
+      }
+
+      setIsSending(false);
+      setShowSuccessMessage(true);
+
+      setTimeout(() => {
+        setShowSuccessMessage(false);
+      }, 3000);
+    } catch (error) {
+      console.error(error);
+      setErrorMessage("An error occured while sending the message.");
+      setIsSending(false);
+    }
   };
 
   return (
@@ -57,28 +66,44 @@ export default function Contact() {
         </div>
         <div className="right">
           <h1>Send me a message 🚀</h1>
-          <form ref={form} onSubmit={sendEmail}>
-            <input
-              type="text"
-              placeholder="Full Name"
-              name="user_name"
-              id="input"
-              required
-            />
-            <input
-              type="email"
-              placeholder="Email Address"
-              name="user_email"
-              id="input2"
-              required
-            />
-            <input type="text" placeholder="Subject" id="input3" required />
-            <h2>Tell me more about your project</h2>
-            <textarea name="message" id="input4">Type something...</textarea>
-            <button type="submit" value="send">
-              Send message
-            </button>
-          </form>
+          {showSuccessMessage ? (
+            <div>
+              <p>Message sent Successfully!</p>
+            </div>
+          ) : (
+            <form ref={form} onSubmit={sendEmail}>
+              <input
+                type="text"
+                placeholder="Full Name"
+                name="user_name"
+                id="input"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                name="user_email"
+                id="input2"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Subject"
+                name="subject"
+                id="input3"
+                required
+              />
+              <h2>Tell me more about your project</h2>
+              <textarea name="message" id="input4">
+                Type something...
+              </textarea>
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
+              <button type="submit" value="send" disabled={isSending}>
+                Send message
+              </button>
+              {isSending && <p>Sending...</p>}
+            </form>
+          )}
         </div>
       </div>
     </section>
