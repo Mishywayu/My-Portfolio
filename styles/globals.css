@@ -216,12 +216,13 @@
 .about-img {
   width: 90%;
   height: 90%;
-  background-image: url("../public/Wayua.JPG");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   position: relative;
   border: 10px solid white;
+}
+
+.about-img-image{
+  width: 100%;
+  height: 100%;
 }
 
 .about-img::after {

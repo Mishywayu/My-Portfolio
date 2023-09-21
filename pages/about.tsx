@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 export default function About() {
@@ -8,7 +9,9 @@ export default function About() {
       </h1>
       <div className="about-container">
         <div className="left">
-          <div className="about-img"></div>
+          <div className="about-img">
+            <img src="/Wayua.JPG" alt="Wayua" className="about-img-image" />
+          </div>
         </div>
         <div className="right">
           <h1>
