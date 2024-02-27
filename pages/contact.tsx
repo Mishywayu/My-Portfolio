@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 
-export default function Contact() {
+const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false); //state for loading indicator
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -108,4 +108,6 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+};
+
+export default Contact;

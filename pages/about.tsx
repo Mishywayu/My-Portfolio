@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 
-export default function About() {
+const About = () => {
   return (
     <section id="about" className="about-main">
       <h1>
@@ -80,4 +80,6 @@ export default function About() {
       </div>
     </section>
   );
-}
+};
+
+export default About;

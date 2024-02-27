@@ -157,11 +157,7 @@
 
 .home-btn a {
   text-decoration: none;
-  text-align: center;
   color: white;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 20px;
 }
 
 .home-btn:hover {
@@ -190,7 +186,7 @@
 
 /* About page */
 #about {
-  padding-top: 600px;
+  padding-top: 550px;
 }
 .about-main h1 {
   text-align: center;
@@ -220,7 +216,7 @@
   border: 10px solid white;
 }
 
-.about-img-image{
+.about-img-image {
   width: 100%;
   height: 100%;
 }
@@ -271,10 +267,155 @@
 }
 
 /* SKILLS PAGE */
+.skills-section {
+  display: none;
+}
+.skills {
+  padding: 30px 140px;
+  margin-bottom: 24px;
+}
+
+.parent {
+  display: grid;
+  height: 50vh;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  padding-top: 20px;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 3 / 3;
+  background-image: url("/bootstrap.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div2 {
+  grid-area: 3 / 1 / 5 / 3;
+  background-image: url("/git.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div3 {
+  grid-area: 5 / 1 / 7 / 3;
+  background-image: url("/MUI.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div4 {
+  grid-area: 1 / 3 / 3 / 5;
+  background-image: url("/html.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div5 {
+  grid-area: 3 / 3 / 5 / 5;
+  background-image: url("/heroku.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div6 {
+  grid-area: 5 / 3 / 7 / 5;
+  background-image: url("/node-js.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div7 {
+  grid-area: 1 / 5 / 3 / 7;
+  background-image: url("/css.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div8 {
+  grid-area: 3 / 5 / 5 / 7;
+  background-image: url("/mysql.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div9 {
+  grid-area: 5 / 5 / 7 / 7;
+  background-image: url("/tailwind.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div10 {
+  grid-area: 1 / 7 / 3 / 9;
+  background-image: url("/javascript.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div11 {
+  grid-area: 3 / 7 / 5 / 9;
+  background-image: url("/reactB.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div12 {
+  grid-area: 5 / 7 / 7 / 9;
+  background-image: url("/postgre.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div13 {
+  grid-area: 1 / 9 / 3 / 11;
+  background-image: url("/express.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div14 {
+  grid-area: 3 / 9 / 5 / 11;
+  background-image: url("/next.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div15 {
+  grid-area: 1 / 11 / 3 / 13;
+  background-image: url("/github-pages.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div16 {
+  grid-area: 3 / 11 / 5 / 13;
+  background-image: url("/react.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div17 {
+  grid-area: 5 / 11 / 7 / 13;
+  background-image: url("/mongo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.div18 {
+  grid-area: 5 / 9 / 7 / 11;
+  background-image: url("/netlify.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 #skills .skills-title {
   text-align: center;
-  padding-top: 30px;
-  font-size: 30px;
+  /* padding-top: 10px; */
+  font-size: 35px;
 }
 .grid-container_skills {
   width: 100%;
@@ -348,7 +489,6 @@ h2 {
   gap: 6px;
   padding: 8px;
   margin-top: 34px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .contact-email svg {
@@ -370,7 +510,6 @@ h2 {
 
 .right form {
   width: 60%;
-  /* margin: 0 auto; */
 }
 
 .right form input {
@@ -411,7 +550,7 @@ h2 {
   background-color: black;
 }
 
-.error-message{
+.error-message {
   color: red;
   font-size: 12px;
 }
@@ -420,11 +559,12 @@ h2 {
 #projects .project-title {
   text-align: center;
   font-size: 30px;
+  padding-bottom: 20px;
 }
+
 .project-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 80vh;
 }
 
@@ -436,19 +576,23 @@ h2 {
 }
 
 .project-left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 50%;
   height: 100%;
-  background-color: black;
 }
 
-.project-left img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+.portfolio {
+  background-color: black;
+  background-image: url("/portfolio.PNG");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.majiwe {
+  background-image: url("/Majiwe-vista-2.PNG");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .project-right {
@@ -476,13 +620,14 @@ h2 {
 
 .project-btn a {
   padding: 10px;
+  text-decoration: none;
   border: none;
   border-radius: 10px;
 }
 
 .live-btn {
   margin-right: 12px;
-  background-color: crimson;
+  background-color: #cd5c5c;
   font-family: Montserrat;
   font-size: 14px;
   text-align: center;
@@ -490,16 +635,23 @@ h2 {
 }
 
 .code-btn {
+  margin-right: 12px;
   font-family: Montserrat;
   font-size: 14px;
   text-align: center;
-  color: black;
-  background-color: pink;
+  color: white;
+  background-color: #cd5c5c;
+}
+
+.design-btn {
+  font-family: Montserrat;
+  background-color: crimson;
+  color: white;
 }
 
 .project-btn a:hover {
   background-color: black;
-  color: crimson;
+  color: white;
 }
 
 /* footer */
@@ -565,8 +717,8 @@ h2 {
   }
 
   /* about */
-  #about{
-    padding-top: 820px;
+  #about {
+    padding-top: 580px;
   }
   .about-container {
     display: inline-block;
@@ -603,7 +755,15 @@ h2 {
   }
 
   /* SKILLS */
-  #skills{
+  .skills-section {
+    display: block;
+  }
+
+  .skills {
+    display: none;
+  }
+
+  #skills {
     padding-top: 60px;
   }
   .grid-container_skills {
@@ -634,7 +794,7 @@ h2 {
   }
 
   /* contact */
-  #contact{
+  #contact {
     padding-top: 50px;
   }
   .contact-container {
@@ -665,10 +825,10 @@ h2 {
   }
 
   /* project */
-  #projects{
+  #projects {
     padding-top: 50px;
   }
-  .project-title{
+  .project-title {
     padding-bottom: 10px;
   }
   .project-container {

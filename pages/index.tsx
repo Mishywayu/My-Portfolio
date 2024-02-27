@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import Home from "./home";
 import About from "./about";
 import Skills from "./skills";
 import Projects from "./projects";
-// import Resume from "./resume";
 import Contact from "./contact";
 import Footer from "./footer";
 
 export default function Navbar() {
-  //Page leads to it's respective section
-  const [activeSection, setActiveSection] = useState('');
-
+  //Page leads to it's respective section (responsiveness)
   const myFunction = () => {
     const x = document.getElementById("myTopnav");
     if (x && x.className === "topnav") {
@@ -23,24 +20,13 @@ export default function Navbar() {
   return (
     <div>
       <nav className="topnav" id="myTopnav">
-        {/* <a href="" className='dummy'></a>
-        <a href="" className='dummy'></a>
-        <a href="" className='dummy'></a>
-        <a href="" className='dummy'></a>
-        <a href="" className='dummy'></a>
-        <a href="" className='dummy'></a>
-        <a href="" className='dummy'></a>
-        <a href="" className='dummy'></a>
-        <a href="" className='dummy'></a>
-        <a href="" className='dummy'></a>
-        <a href="" className='dummy'></a> */}
-        <a href="#home">
-          Home
-        </a>
+        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="https://drive.google.com/file/d/11J20QSnBhZ258Har7KahPDil08FtJZgv/view?usp=drive_link">Resume</a>
+        <a href="https://drive.google.com/file/d/11J20QSnBhZ258Har7KahPDil08FtJZgv/view?usp=drive_link">
+          Resume
+        </a>
         <a href="#contact">Contact</a>
         <a href="javascript:void(0);" className="icon" onClick={myFunction}>
           <svg
